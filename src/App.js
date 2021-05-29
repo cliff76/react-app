@@ -25,8 +25,8 @@ function App() {
             My To-Dos
           </p>
           {
-            todos.map(each => {
-              return ( <div>{each}</div> )
+            todos.map((each, index) => {
+              return ( <div key={index}>{each}</div> )
             })
           }
         </header>
