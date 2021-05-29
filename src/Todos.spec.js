@@ -21,4 +21,9 @@ describe('Our Todos component', () => {
     const textInput = doc.queryByLabelText('Enter Todo');
     expect(textInput).toBeInTheDocument();
   });
+
+  it('Has a button to add todo item',() => {
+    const addTodoButton = doc.queryByRole('button');
+    expect(addTodoButton).toBeInTheDocument();
+  });
 });

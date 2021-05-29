@@ -6,6 +6,7 @@ function Todos() {
             <label>
                 Enter Todo <input type="text"/>
             </label>
+            <button>Add</button>
         </form>
     </div>);
 }
