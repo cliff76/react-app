@@ -11,7 +11,9 @@ function App() {
           Todos App
         </p>
       </header>
-      <Todos/>
+      <main className="App-main">
+        <Todos/>
+      </main>
     </div>
   );
 }
