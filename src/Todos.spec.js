@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import { Todos } from './Todos';
 
 let doc;
@@ -25,5 +25,20 @@ describe('Our Todos component', () => {
   it('Has a button to add todo item',() => {
     const addTodoButton = doc.queryByRole('button');
     expect(addTodoButton).toBeInTheDocument();
+  });
+});
+
+describe('our Todos component with event handling', () => {
+  it('takes an onAdd event handler',() => {
+    render(<Todos onAdd={jest.fn()}/>);
+  });
+  
+  it('records todo text when add button is clicked',() => {
+    const onAdd = jest.fn();
+    doc = render(<Todos onAdd={onAdd}/>);
+    const exampleTodo = 'buy milk';
+    fireEvent.change(doc.getByLabelText(/enter todo/i), { target: {value: exampleTodo}});
+    fireEvent.click(doc.getByRole('button'));
+    expect(onAdd).toHaveBeenCalledWith(exampleTodo);
   });
 });
