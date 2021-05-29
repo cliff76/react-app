@@ -6,3 +6,6 @@ checkout the branch and examine the commit history.
 
 The first tutorial is a ToDo app. To see it run
 `git checkout todo-tutorial`
+
+The second tutorial is a ToDo app written TDD style. To see it run
+`git checkout tdd-todo`
