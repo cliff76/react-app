@@ -16,4 +16,9 @@ describe('Our Todos component', () => {
     const todoInputForm = doc.queryByRole('form');
     expect(todoInputForm).toBeInTheDocument();
   });
+
+  it('has an input field for todo Items',() => {
+    const textInput = doc.queryByLabelText('Enter Todo');
+    expect(textInput).toBeInTheDocument();
+  });
 });
