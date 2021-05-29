@@ -1,5 +1,10 @@
 function Todos() {
-    return (<div>Todo List</div>);
+    return (
+    <div>
+        <h1>Todo List</h1>
+        <form name="todo-form">
+        </form>
+    </div>);
 }
 
 export {
