@@ -13,6 +13,21 @@ function TodoInput() {
   </div>;
 }
 
+function TodoOutput(props) {
+  return <div>
+    <p>
+      My To-Dos
+    </p>
+    {
+      props.todos.map(props.callbackfn)
+    }
+  </div>;
+}
+
+function TodoItem(props) {
+  return <div>{props.each}</div>;
+}
+
 function App() {
 
   const [todos, setTodos] = React.useState([])
@@ -27,16 +42,9 @@ function App() {
           }}>
             <TodoInput/>
           </form>
-          <div>
-            <p>
-              My To-Dos
-            </p>
-            {
-              todos.map((each, index) => {
-                return (<div key={index}>{each}</div>)
-              })
-            }
-          </div>
+          <TodoOutput todos={todos} callbackfn={(each, index) =>
+              (<TodoItem key={index} each={each}/>)
+          }/>
         </header>
       </div>
   );
